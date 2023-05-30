@@ -115,5 +115,24 @@ namespace RubberBandingGridUWP
                 _gridLines.Add(line);
             }
         }
+        
+
+        private void SetGridSize_Clicked(object sender, RoutedEventArgs e)
+        {
+            if (int.TryParse(RowsInput.Text, out int rows))
+            {
+                GridRows = rows;
+            }
+            if (int.TryParse(ColumnsInput.Text, out int columns))
+            {
+                GridColumns = columns;
+            }
+        }
+
+        private void ClearCanvas_Clicked(object sender, RoutedEventArgs e)
+        {
+            ClearGridLinesAndBoundingBox();
+            Canvas.Children.Clear();
+        }
     }
 }
